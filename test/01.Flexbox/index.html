@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(S)CSS Practice</title>
+    <style>
+        /* Flex Box (Parent)*/
+        .wrapper {
+            display: flex;
+            /* flex-direction: column; */
+            /*** < Main Axis : 기준 축 > ***/
+            /* block과 달리 유동적으로 자리 잡아줌 */
+            justify-content: space-around;
+            /* justify-content: center; */
+
+            /*** < Cross Axis : Main Axis에 상대되는 축> ***/
+            /* Ex> Main이 row면 cross는 horizontal */
+            /* Ex> Main이 column면 cross는 vertical */
+            /* align-items: top; */
+            /* align-items의 default 는 center*/
+            /* align-items: stretch; */
+            /* align-items: cross axis 방향으로 item을 움직여줌 */
+            /* height: 100vh; */
+
+            /* flex-wrap: wrap; */
+            /* flex-wrap : wrap (width를 유지해라), nowrap (안지켜도 됨) */
+
+            /* flex-direction: row-reverse; */
+
+            align-content: space-around;
+        }
+
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: peru;
+            color: white;
+            font-size: 50px;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+
+
+        .box:nth-child(2) {
+            /* align-self: center;
+            order: 1; */
+            /* order의 default는 0 */
+
+            background-color: black;
+
+            flex-shrink: 2;
+            /* flex-shrink: 2 -> 2번 box가 창 사이즈를 변경할 떄 다른 두개보다 두배로 더 줄어듬 */
+
+            /* flex-basis: element 에게 처음 주는 크기, width와 거의 같음 */
+        }
+
+        .box:nth-child(3) {
+            /* align-self: flex-end; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Flex는 기본적으로 width 크기를 깨서라도 자식들이 같은 라인에 위치하게 만듬-->
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <!-- <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div> -->
+    </div>
+</body>
+
+<script>
+
+</script>
+
+</html>

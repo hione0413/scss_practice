@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* template area */
+
+        .grid {
+            display: grid;
+            /* 200px 를 4번 반복하라는 grid 함수 */
+            /* grid-template-columns: repeat(4, 200px); */
+            grid-template-columns: auto 200px;
+            /* grid-template-rows: repeat(4, 200px); */
+            grid-template-rows: 100px repeat(2, 200px) 100px;
+
+            /* grid-area의 이름을 참조해서 만듬 */
+            grid-template-areas:
+                "header header header header"
+                "content content . nav"
+                "content content . nav"
+                "footer footer footer footer"
+            ;
+        }
+
+        .header {
+            background-color: #2ecc71;
+            grid-area: header;
+            /* grid-area에서 해당 css 영역이 갖는 일종의 ID 가 header라고 명시해주는 것*/
+        }
+
+        .content {
+            background-color: #3498db;
+            grid-area: content;
+        }
+
+        .nav {
+            background-color: #8e44ad;
+            grid-area: nav;
+        }
+
+        .footer {
+            background-color: #f39c12;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header"></div>
+        <div class="content"></div>
+        <div class="nav"></div>
+        <div class="footer"></div>
+
+    </div>
+</body>
+
+</html>

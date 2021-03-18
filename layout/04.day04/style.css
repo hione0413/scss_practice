@@ -1,0 +1,139 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 60% 5% auto;
+}
+
+.left {
+    background-color: orange;
+    display: grid;
+    grid-template-rows: repeat(6, 16.6%);
+    /* border: 1px solid red; */
+}
+
+.left div {
+    border: 1px solid red;
+}
+
+.left > div {
+    display: grid;
+    grid-template-columns: 5% 70% 25%;
+}
+
+.left > div:hover {
+    color: white;
+    border-color : white;
+}
+
+.left > div > nav {
+/* 글자 세로쓰기 */
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    display: grid;
+    align-content: start;
+    justify-content: center;
+    padding-left: 20%;
+}
+
+.left > div > .content {
+    font-size: 30px;
+    display: grid;
+    align-content: center;
+    justify-content: start;
+    padding-left: 10px;    
+}
+
+.left .content__right {
+    display: grid;
+    grid-template-rows: 50% auto;    
+    border: none;
+}
+
+.content__right__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.content__right__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.center {
+    display: grid;
+    grid-template-rows: 50% 0% 50%;
+    align-content: inherit;
+    font-size: 26px;
+}
+
+.center > div:nth-child(1) {
+    background-color: pink;
+    writing-mode: vertical-lr;
+    display: grid;
+    align-content: start;
+    justify-content: start;
+    padding-top: 10px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+img {
+    src: "";
+    background-color: antiquewhite;
+    width: 50px;
+    height: 50px;
+    position: unset;
+}
+
+.center > div:nth-child(3) {
+    background-color: blue;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    display: grid;
+    align-content: start;
+    justify-content: start;
+    padding-top: 10px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.right {
+    background-color: red;
+    display: grid;
+    grid-template-rows: 5% auto;
+}
+
+header > ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    font-size: 15px;
+}
+
+.right > .content {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: repeat(6, 12.2%);
+    gap : 5%;
+    padding-left: 7px;
+}
+
+.right > .content > div{
+    border-top: 1px solid black;
+}
+
+h2 {
+    padding-top: 2%;
+    font-size: 18px;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fr : fraction -> 사용 가능한 공간 
+            모바일 환경을 위해 px가 아닌 %나 fr을 쓰는게 좋음
+        */
+
+        .grid {
+            display: grid;
+            gap: 5px;
+            /* grid-template-columns: repeat(4, 1fr); */
+            /* grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr); */
+            /*주의: vertical은 높이를 지정하지 않으면 높이를 가지지 않은다! */
+            height: 50vh;
+            /*50vh : 내 스크린의 절반*/
+
+            grid-template:
+                /* [name] 으로 naming을 해줄 수 있음 (권장하지는 않음) */
+                [header-start] "header header header header"1fr [header-end]
+                /* 여기 위에서의 1fr: row 의 높이*/
+                [content-start] "content content content nav"2fr [content-end]
+                /**/
+                [footer-start] "footer footer footer footer"1fr [footer-end]
+                /* 마지막 1fr 1fr 1fr 1fr 은 column의 크기 세팅 */
+                / 1fr 1fr 1fr 1fr;
+            /* 주의: grid-template 안에서는 repeat() 못 씀*/
+        }
+
+        .header {
+            background-color: #2ecc71;
+            grid-area: header;
+        }
+
+        .content {
+            background-color: #3498db;
+            grid-area: content;
+        }
+
+        .nav {
+            background-color: #8e44ad;
+            grid-area: nav;
+        }
+
+        .footer {
+            background-color: #f39c12;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header"></div>
+        <div class="content"></div>
+        <div class="nav"></div>
+        <div class="footer"></div>
+
+    </div>
+</body>
+
+</html>

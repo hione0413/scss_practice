@@ -1,0 +1,12 @@
+/* Extends : 반복에 유리*/
+@import "buttons";
+
+a {
+    @extend  %button;
+    text-decoration: none;
+}
+
+button {
+    @extend  %button;
+    border: none;
+}

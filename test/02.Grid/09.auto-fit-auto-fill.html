@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            color: white;
+            display: grid;
+            gap: 5px;
+            /* height: 50vh; */
+            /* minmax() : 최소값과 최대값을 정할 수 있다. */
+            grid-template-columns: repeat(10, minmax(100px, 1fr));
+            grid-template-rows: repeat(4, 100px);
+            grid-auto-columns: 100px;
+        }
+
+        .grid:first-child {
+            /* auto-fit : row에 딱 맞게 해줌 : 유동적 */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .grid:last-child {
+            /* auto-fill: 해당 row에 column을 최대한 많이 만들어줌 : 정확한 사이즈 */
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        .item:nth-child(odd) {
+            background-color: #2ecc71;
+        }
+
+        .item:nth-child(even) {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    auto-fit
+    <div class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+    auto-fill
+    <div class="grid">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+
+</html>

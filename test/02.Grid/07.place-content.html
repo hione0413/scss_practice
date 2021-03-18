@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* fr : fraction -> 사용 가능한 공간 
+            모바일 환경을 위해 px가 아닌 %나 fr을 쓰는게 좋음
+        */
+
+        .grid {
+            background-color: black;
+            color: white;
+            display: grid;
+            gap: 5px;
+            height: 50vh;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+
+            /* item은 그리드 부분 각 하나이고
+            content는 그리드 전체를 컨트롤 */
+            justify-content: center;
+            align-content: start;
+        }
+
+        .header {
+            background-color: #2ecc71;
+
+        }
+
+        .content {
+            background-color: #3498db;
+        }
+
+        .nav {
+            background-color: #8e44ad;
+
+        }
+
+        .footer {
+            background-color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="nav">nav</div>
+        <div class="footer">footer</div>
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="nav">nav</div>
+        <div class="footer">footer</div>
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="nav">nav</div>
+        <div class="footer">footer</div>
+        <div class="header">header</div>
+        <div class="content">content</div>
+        <div class="nav">nav</div>
+        <div class="footer">footer</div>
+
+    </div>
+</body>
+
+</html>

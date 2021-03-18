@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Line에 이름을 줄 수도 있다. */
+
+        .grid {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line];
+            grid-template-rows: repeat(4, 100px [sexy-line]);
+            /* 100px [sexy-line] 100px [sexy-line] 100... 와 같은 의미*/
+        }
+
+        .header {
+            background-color: #2ecc71;
+            grid-column: span 4;
+
+        }
+
+        .content {
+            background-color: #3498db;
+            /* grid-column: 1 / -2; */
+            grid-column: first-line / fourth-line;
+            /* grid-row: span 2; */
+            grid-row: sexy-line 1 / sexy-line 3;
+
+        }
+
+        .nav {
+            background-color: #8e44ad;
+            grid-row: span 2;
+        }
+
+        .footer {
+            background-color: #f39c12;
+            grid-column: span 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="header"></div>
+        <div class="content"></div>
+        <div class="nav"></div>
+        <div class="footer"></div>
+
+    </div>
+</body>
+
+</html>

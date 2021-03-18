@@ -1,0 +1,30 @@
+
+@import "mixins";
+
+/* Nesting : 함수처럼 쓸 수 있음. 커스터마이징에 유리*/
+.box {
+    margin-top: 10px;
+    &:hover {
+        background-color: green;
+    }
+    h2 {
+        color: blue;
+        &:hover {
+            color: red;
+        }
+    }
+    button {
+        color: red;
+    }
+}
+
+a {
+    margin-bottom: 10px;
+    // @include link();
+    &:nth-child(odd) {
+        @include link('odd');
+    }
+    &:nth-child(even) {
+        @include link('even');
+    }
+}
